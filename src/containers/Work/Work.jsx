@@ -3,7 +3,11 @@ import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
-
+import Hachton from "../images/project1.png";
+import Mobile from "../images/project2.png";
+import Pharmacy from "../images/project3.png";
+import Mern from "../images/project4.jpg";
+import Digital from "../images/project5.png";
 import "./Work.css";
 
 const Work = () => {
@@ -17,22 +21,49 @@ const Work = () => {
     // Static data
     const staticWorks = [
       {
-        title: "Project One",
-        description: "",
+        title: "Hackathon Projrect",
+        description: "A React-based web application offering comprehensive e-commerce solutions. Features include product listings, AI-powered product recommendations, credit and loan services, advanced inventory management, real-time data analytics, and a feedback system for transparency. Built with React and styled using Material-UI for a sleek and responsive design.",
         tags: ["ReactJS"],
-        imgUrl: "path/to/image-one.jpg",
+        imgUrl: Hachton,
         projectLink: "https://example.com/project-one",
-        codeLink: "https://github.com/example/project-one",
+        codeLink: "https://github.com/Helix4c/ehl-frontend",
       },
       {
-        title: "Project Two",
-        description: "A Python machine learning project",
-        tags: ["Machine Learning", "Python"],
-        imgUrl: "path/to/image-two.jpg",
-        projectLink: "https://example.com/project-two",
-        codeLink: "https://github.com/example/project-two",
+          title: "Mobile App Design in Figma",
+          description: "An innovative and visually appealing mobile app design created using Figma. This project showcases a modern and intuitive user interface tailored for mobile devices. It includes features such as smooth navigation, user-friendly controls, and responsive layouts that ensure a seamless experience across various screen sizes and orientations.",
+          tags: [ "Figma"],
+          imgUrl:Mobile,
+          projectLink: "https://www.figma.com/proto/d5QASqjAXhWyl1yhavGMk1/InspireStart?node-id=0-1&t=Gmf1gaZQKu31iKgw-1",
+          codeLink: "https://www.figma.com/design/d5QASqjAXhWyl1yhavGMk1/InspireStart?node-id=0-1&m=dev&t=Gmf1gaZQKu31iKgw-1"
+      
       },
       // Add more works as needed
+      {
+        title: "Pharmacy Management UI Design",
+        description: "A user-friendly interface for a pharmacy application designed using Figma. The project aims to simplify medication management, enhance user experience, and streamline workflows for both pharmacy staff and customers.",
+        tags: [ "Figma"],
+        imgUrl: Pharmacy,
+        projectLink: "https://example.com/project-one",
+        codeLink: "https://www.figma.com/design/lrCDDVNcWzReOZOWmjpKxD/Pharmacy?node-id=19-372&t=Gmf1gaZQKu31iKgw-0"
+    },
+    
+    {
+      title: "User Authenticator MERN Stack",
+      description: "A secure and scalable user authentication system built with the MERN stack (MongoDB, Express.js, ReactJS, Node.js). This project allows users to register, log in, and manage their profiles. It includes functionalities such as email verification, password recovery, and secure session management.",
+      tags: [ "Backend"],
+      imgUrl: Mern,
+      projectLink: "https://example.com/user-authenticator-mern-stack",
+      codeLink: "https://github.com/Helix4c/Starter-MERN"
+  },
+  {
+    title: "Elbetel Digital Market Website",
+    description: "A comprehensive digital market platform built using ReactJS, designed to facilitate online buying and selling. This project aims to create a seamless experience for users to browse products, manage transactions, and interact with sellers. It includes features such as product listings, secure payment integration, user reviews, and an intuitive search function.",
+    tags: ["ReactJS",  "Web Development"],
+    imgUrl: Digital,
+    projectLink: "https://mercycermy.github.io/website/#testimonials",
+    codeLink: "https://github.com/Helix4c/Informativewebpage"
+}
+
     ];
 
     setWorks(staticWorks);
