@@ -1,0 +1,44 @@
+.app__team {
+    padding: 2rem 0;
+  }
+  .app__team-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+  }
+  
+  .app__team-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+  }
+  
+  
+  
+  .app__team-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+ 
+  
+  .app__team-btns .app__flex:hover {
+    background-color: #d62839;
+  }
+  
+  @media (max-width: 768px) {
+    .app__team-content {
+      width: 90%;
+    }
+  
+    .app__team-btns {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
