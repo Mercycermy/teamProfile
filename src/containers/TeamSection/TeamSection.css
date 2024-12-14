@@ -14,31 +14,36 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 80%;
+    width: 100%;
   }
   
   
   
   .app__team-btns {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     margin-top: 1rem;
-  }
   
- 
+    div {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--white-color);
+      margin: 1rem;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
   
-  .app__team-btns .app__flex:hover {
-    background-color: #d62839;
-  }
+      svg {
+        width: 20px;
+        height: 20px;
+        color: var(--secondary-color);
+      }
   
-  @media (max-width: 768px) {
-    .app__team-content {
-      width: 90%;
-    }
-  
-    .app__team-btns {
-      flex-direction: column;
-      align-items: center;
+      &:hover {
+        background-color: var(--secondary-color);
+        svg {
+          color: var(--white-color);
+        }
+      }
     }
   }
   
