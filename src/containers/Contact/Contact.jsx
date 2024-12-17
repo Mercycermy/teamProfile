@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com"; // Import EmailJS library
 
 import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
@@ -13,7 +14,7 @@ const Contact = () => {
     message: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [loading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const { email, message, subject, name } = formData;
 
@@ -26,19 +27,35 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    setIsLoading(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-    // Here you would normally send the form data to a server.
-    // For now, we'll simulate a successful submission.
-    setTimeout(() => {
-      setIsLoading(false);
+    // EmailJS configuration
+    const serviceId = "service_g7fj9x1";
+    const templateId = "template_ew0hm63";
+    const publicKey = "47W1VeLGBhasjhak1";
 
-      // Simulate email sending to server (you would replace this with actual email sending logic)
-      // Example: axios.post('/send-email', formData);
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      subject: subject,
+      message: message,
+    };
 
-      setIsFormSubmitted(true);
-    }, 1000);
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then(
+        () => {
+          setLoading(false);
+          setIsFormSubmitted(true);
+        },
+        (error) => {
+          setLoading(false);
+          console.error("EmailJS Error: ", error);
+          alert("Failed to send the message. Please try again.");
+        }
+      );
   };
 
   return (
@@ -63,7 +80,7 @@ const Contact = () => {
       </div>
 
       {!isFormSubmitted ? (
-        <div className="app__contact-form app__flex">
+        <form className="app__contact-form app__flex" onSubmit={handleSubmit}>
           <div className="app__flex">
             <input
               type="text"
@@ -72,6 +89,7 @@ const Contact = () => {
               value={name}
               onChange={handleChangeInput}
               name="name"
+              required
             />
           </div>
           <div className="app__flex">
@@ -82,6 +100,7 @@ const Contact = () => {
               value={email}
               onChange={handleChangeInput}
               name="email"
+              required
             />
           </div>
           <div className="app__flex">
@@ -92,6 +111,7 @@ const Contact = () => {
               value={subject}
               onChange={handleChangeInput}
               name="subject"
+              required
             />
           </div>
           <div>
@@ -100,16 +120,17 @@ const Contact = () => {
               placeholder="Your Message"
               value={message}
               onChange={handleChangeInput}
+              required
             />
           </div>
           <button
-            type="button"
+            type="submit"
             className="portfolio-button"
-            onClick={handleSubmit}
+            disabled={loading}
           >
-            {loading ? "Sending Message" : "Send Message"}
+            {loading ? "Sending Message..." : "Send Message"}
           </button>
-        </div>
+        </form>
       ) : (
         <div>
           <h3 className="head-text">
