@@ -1,21 +1,21 @@
 import React from "react";
-import { BsLinkedin, BsInstagram } from "react-icons/bs";
-import { FaFacebookF } from "react-icons/fa";
+import { GrLinkedinOption } from "react-icons/gr";
+import { FaGithub, FaTelegramPlane } from "react-icons/fa";
 
 const SocialMedia = () => {
   const socialLinks = [
     {
-      href: "https://www.linkedin.com/in/helix",
-      icon: <BsLinkedin />,
-    },
-    {
-      href: "https://www.facebook.com/helix",
-      icon: <FaFacebookF />,
-    },
-    {
-      href: "https://www.instagram.com/helix",
-      icon: <BsInstagram />,
-    },
+               href: "https://github.com/Helix4c",
+               icon: <FaGithub />,
+             },
+             {
+               href: "https://www.linkedin.com/company/heliix4/?viewAsMember=true",
+               icon: <GrLinkedinOption />,
+             },
+             {
+               href: "https://t.me/mercycermy",
+               icon: <FaTelegramPlane />,
+             },
   ];
 
   return (

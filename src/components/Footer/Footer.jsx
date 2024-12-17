@@ -1,7 +1,7 @@
 import React from "react";
-import { BsInstagram } from "react-icons/bs";
+
 import { GrLinkedinOption } from "react-icons/gr";
-import { FaFacebookF } from "react-icons/fa";
+import { FaGithub, FaTelegramPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./Footer.css"
 
@@ -54,17 +54,18 @@ const Footer = () => {
       >
         {[
           {
-            href: "https://www.linkedin.com/Helix4",
+            href: "https://github.com/Helix4c",
+            icon: <FaGithub />,
+          },
+          {
+            href: "https://www.linkedin.com/company/heliix4/?viewAsMember=true",
             icon: <GrLinkedinOption />,
           },
           {
-            href: "https://www.facebook.com/praveenterax",
-            icon: <FaFacebookF />,
+            href: "https://t.me/mercycermy",
+            icon: <FaTelegramPlane />,
           },
-          {
-            href: "https://www.instagram.com/helix4",
-            icon: <BsInstagram />,
-          },
+          
         ].map((social, index) => (
           <motion.div
             className="app__flex"
