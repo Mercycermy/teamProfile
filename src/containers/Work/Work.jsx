@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
-
 import { AppWrap, MotionWrap } from "../../wrapper";
 import Hachton from "../images/project1.png";
 import Mobile from "../images/project2.png";
 import Pharmacy from "../images/project3.png";
 import Mern from "../images/project4.jpg";
-import Digital from "../images/project5.png";
+import Akilas from "../images/akilas.jpg";
+import Backimg from "../images/backimg.png";
+import Jdplc from "../images/jdplc.jpg";
+import Kenginer from "../images/kenginer.jpg";
+import Petshop from "../images/petshop.jpg";
+import Pharmacy2 from "../images/pharmacy.jpg";
 import "./Work.css";
 
 const Work = () => {
@@ -16,54 +20,114 @@ const Work = () => {
   const [filterWorks, setFilterWorks] = useState([]);
   const [works, setWorks] = useState([]);
   const [touched, setTouched] = useState(null);
+  const [selectedWork, setSelectedWork] = useState(null); // For modal
 
   useEffect(() => {
-    // Static data
     const staticWorks = [
       {
-        title: "Hackathon Projrect",
-        description: "A React-based web application offering comprehensive e-commerce solutions. Features include product listings, AI-powered product recommendations, credit and loan services, advanced inventory management, real-time data analytics, and a feedback system for transparency. Built with React and styled using Material-UI for a sleek and responsive design.",
+        title: "Hackathon Project",
+        description: "A React-based e-commerce platform with AI-powered recommendations and advanced inventory management.",
         tags: ["ReactJS"],
         imgUrl: Hachton,
         projectLink: "https://example.com/project-one",
         codeLink: "https://github.com/Helix4c/ehl-frontend",
       },
       {
-          title: "Mobile App Design in Figma",
-          description: "An innovative and visually appealing mobile app design created using Figma. This project showcases a modern and intuitive user interface tailored for mobile devices. It includes features such as smooth navigation, user-friendly controls, and responsive layouts that ensure a seamless experience across various screen sizes and orientations.",
-          tags: [ "Figma"],
-          imgUrl:Mobile,
-          projectLink: "https://www.figma.com/proto/d5QASqjAXhWyl1yhavGMk1/InspireStart?node-id=0-1&t=Gmf1gaZQKu31iKgw-1",
-          codeLink: "https://www.figma.com/design/d5QASqjAXhWyl1yhavGMk1/InspireStart?node-id=0-1&m=dev&t=Gmf1gaZQKu31iKgw-1"
-      
+        title: "Mobile App Design in Figma",
+        description: "A modern and intuitive mobile app design with smooth navigation and responsive layouts.",
+        tags: ["Figma"],
+        imgUrl: Mobile,
+        projectLink: "https://www.figma.com/proto/d5QASqjAXhWyl1yhavGMk1/InspireStart?node-id=0-1&t=Gmf1gaZQKu31iKgw-1",
+        codeLink: "https://www.figma.com/design/d5QASqjAXhWyl1yhavGMk1/InspireStart?node-id=0-1&m=dev&t=Gmf1gaZQKu31iKgw-1",
       },
-      // Add more works as needed
       {
         title: "Pharmacy Management UI Design",
-        description: "A user-friendly interface for a pharmacy application designed using Figma. The project aims to simplify medication management, enhance user experience, and streamline workflows for both pharmacy staff and customers.",
-        tags: [ "Figma"],
+        description: "A user-friendly pharmacy app interface designed to enhance workflows and user experience.",
+        tags: ["Figma"],
         imgUrl: Pharmacy,
         projectLink: "https://example.com/project-one",
-        codeLink: "https://www.figma.com/design/lrCDDVNcWzReOZOWmjpKxD/Pharmacy?node-id=19-372&t=Gmf1gaZQKu31iKgw-0"
-    },
-    
-    {
-      title: "User Authenticator MERN Stack",
-      description: "A secure and scalable user authentication system built with the MERN stack (MongoDB, Express.js, ReactJS, Node.js). This project allows users to register, log in, and manage their profiles. It includes functionalities such as email verification, password recovery, and secure session management.",
-      tags: [ "Backend"],
-      imgUrl: Mern,
-      projectLink: "https://example.com/user-authenticator-mern-stack",
-      codeLink: "https://github.com/Helix4c/Starter-MERN"
-  },
-  {
-    title: "Elbetel Digital Market Website",
-    description: "A comprehensive digital market platform built using ReactJS, designed to facilitate online buying and selling. This project aims to create a seamless experience for users to browse products, manage transactions, and interact with sellers. It includes features such as product listings, secure payment integration, user reviews, and an intuitive search function.",
-    tags: ["ReactJS",  "Web Development"],
-    imgUrl: Digital,
-    projectLink: "https://mercycermy.github.io/website/#testimonials",
-    codeLink: "https://github.com/Helix4c/Informativewebpage"
-}
-
+        codeLink: "https://www.figma.com/design/lrCDDVNcWzReOZOWmjpKxD/Pharmacy?node-id=19-372&t=Gmf1gaZQKu31iKgw-0",
+      },
+      {
+        title: "User Authenticator MERN Stack",
+        description: "A secure user authentication system with email verification and password recovery.",
+        tags: ["Backend"],
+        imgUrl: Mern,
+        projectLink: "https://example.com/user-authenticator-mern-stack",
+        codeLink: "https://github.com/Helix4c/Starter-MERN",
+      },
+      {
+        title: "DIY Instruction API",
+        description: "A REST API for managing DIY projects, categories, and tags with filtering and pagination.",
+        tags: ["Backend"],
+        imgUrl: Backimg,
+        projectLink: "https://github.com/adams1864/DIY-Project-Instruction-Platform",
+        codeLink: "https://github.com/adams1864/DIY-Project-Instruction-Platform",
+      },
+      {
+        title: "Social Media API",
+        description: "A Django-based API for creating posts, following users, and viewing personalized feeds.",
+        tags: ["Backend"],
+        imgUrl: Backimg,
+        projectLink: "https://github.com/adams1864/Alx_DjangoLearnLab/tree/main/social_media_api",
+        codeLink: "https://github.com/adams1864/Alx_DjangoLearnLab/tree/main/social_media_api",
+      },
+      {
+        title: "Rental System",
+        description: "A rental system built with Node.js, Express, MySQL, and Socket.IO.",
+        tags: ["Backend"],
+        imgUrl: Backimg,
+        projectLink: "https://github.com/adams1864/rental-system",
+        codeLink: "https://github.com/adams1864/rental-system",
+      },
+      {
+        title: "HelixBlog Backend",
+        description: "A blogging platform backend with user authentication, post management, and image uploads.",
+        tags: ["Backend", "React"],
+        imgUrl: Backimg,
+        projectLink: "https://github.com/adams1864/helixblog-backend/tree/master",
+        codeLink: "https://github.com/adams1864/helixblog-backend/tree/master",
+      },
+      {
+        title: "Empire Pharmacy",
+        description: "A trusted online pharmacy offering affordable medicines and healthcare solutions.",
+        tags: ["Figma", "ReactJs", "Web Development"],
+        imgUrl: Pharmacy2,
+        projectLink: "http://www.empirepharmacyplc.com/",
+        codeLink: "https://github.com/Mercycermy/PharmacyWeb",
+      },
+      {
+        title: "K-Engineering",
+        description: "Smart security and energy solutions for homes and businesses in Ethiopia.",
+        tags: ["ReactJs", "Web Development"],
+        imgUrl: Kenginer ,
+        projectLink: "https://mercycermy.github.io/kENGINEERING/",
+        codeLink: "https://github.com/Mercycermy/kENGINEERING",
+      },
+      {
+        title: "Family Pet Shop",
+        description: "A pet shop offering premium pet food, training, and adoption services.",
+        tags: ["ReactJs", "Web Development"],
+        imgUrl: Petshop,
+        projectLink: "https://mercycermy.github.io/family-pet/",
+        codeLink: "https://github.com/Mercycermy/family-pet",
+      },
+      {
+        title: "Filmmaker Portfolio",
+        description: "A portfolio showcasing filmmaking projects and collaborations.",
+        tags: ["Figma", "ReactJs", "Web Development"],
+        imgUrl: Akilas,
+        projectLink: "https://mercycermy.github.io/filmakerweb/",
+        codeLink: "https://github.com/Mercycermy/filmakerweb",
+      },
+      {
+        title: "JD General Trading",
+        description: "A Figma design for a business specializing in medical oxygen and automotive sales.",
+        tags: ["Figma"],
+        imgUrl: Jdplc,
+        projectLink: "https://www.figma.com/design/LM6OpHjx2TXNgRs774aG2l/JD-General-Trading?node-id=0-1&p=f&t=viUdbt41dvYHjMw5-0",
+        codeLink: "https://www.figma.com/design/LM6OpHjx2TXNgRs774aG2l/JD-General-Trading?node-id=0-1&p=f&t=viUdbt41dvYHjMw5-0",
+      },
     ];
 
     setWorks(staticWorks);
@@ -82,6 +146,14 @@ const Work = () => {
         setFilterWorks(works.filter((work) => work.tags.includes(item)));
       }
     }, 500);
+  };
+
+  const handleDescriptionClick = (work) => {
+    setSelectedWork(work); // Set the selected work for the modal
+  };
+
+  const closeModal = () => {
+    setSelectedWork(null); // Close the modal
   };
 
   return (
@@ -105,21 +177,16 @@ const Work = () => {
           )
         )}
       </div>
-      
+
       <motion.div
         animate={animateCard}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__work-portfolio"
-        onClick={() => setTouched(null)}
       >
         {filterWorks.map((work, index) => (
           <motion.div
-            className={`app__work-item app__flex ${
-              touched === index ? "app__work-touched-nowrap" : ""
-            }`}
+            className="app__work-item app__flex"
             key={index}
-            onClick={() => setTouched(index)}
-            onTouchStart={() => setTouched(index)}
           >
             <div className="app__work-img app__flex">
               <img src={work.imgUrl} alt={work.title} />
@@ -130,17 +197,13 @@ const Work = () => {
                   ease: "easeInOut",
                   staggerChildren: 0.5,
                 }}
-                className={`app__work-hover app__flex ${
-                  touched === index ? "app__work-touched" : ""
-                }`}
+                className="app__work-hover app__flex"
               >
                 <a
                   href={work.projectLink}
                   target="_blank"
                   rel="noreferrer"
-                  className={`app__flex ${
-                    work.projectLink.toLowerCase() === "na" ? "none" : ""
-                  }`}
+                  className="app__flex"
                 >
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
@@ -169,14 +232,8 @@ const Work = () => {
               </motion.div>
             </div>
             <div className="app__work-content app__flex">
-              <h4 className="bold-text" title={work.title}>
-                {work.title}
-              </h4>
-              <p
-                className="p-text"
-                style={{ marginTop: 10 }}
-                title={work.description}
-              >
+              <h4 className="bold-text">{work.title}</h4>
+              <p className="p-text" style={{ marginTop: 10, color: "black" }}>
                 {work.description}
               </p>
               <div className="app__work-tag app__flex">
@@ -186,6 +243,26 @@ const Work = () => {
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Modal for showing details */}
+      {selectedWork && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
+            <h3>{selectedWork.title}</h3>
+            <p>{selectedWork.description}</p>
+            <a href={selectedWork.projectLink} target="_blank" rel="noreferrer">
+              View Project
+            </a>
+            <br />
+            <a href={selectedWork.codeLink} target="_blank" rel="noreferrer">
+              View Code
+            </a>
+          </div>
+        </div>
+      )}
     </>
   );
 };
