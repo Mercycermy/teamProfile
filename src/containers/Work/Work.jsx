@@ -83,7 +83,7 @@ const Work = () => {
       {
         title: "HelixBlog Backend",
         description: "A blogging platform backend with user authentication, post management, and image uploads.",
-        tags: ["Backend", "React"],
+        tags: ["Backend", "ReactJS"],
         imgUrl: Backimg,
         projectLink: "https://github.com/adams1864/helixblog-backend/tree/master",
         codeLink: "https://github.com/adams1864/helixblog-backend/tree/master",
@@ -91,7 +91,7 @@ const Work = () => {
       {
         title: "Empire Pharmacy",
         description: "A trusted online pharmacy offering affordable medicines and healthcare solutions.",
-        tags: ["Figma", "ReactJs", "Web Development"],
+        tags: ["Figma", "ReactJS", "Web Development"],
         imgUrl: Pharmacy2,
         projectLink: "http://www.empirepharmacyplc.com/",
         codeLink: "https://github.com/Mercycermy/PharmacyWeb",
@@ -99,7 +99,7 @@ const Work = () => {
       {
         title: "K-Engineering",
         description: "Smart security and energy solutions for homes and businesses in Ethiopia.",
-        tags: ["ReactJs", "Web Development"],
+        tags: ["ReactJS", "Web Development"],
         imgUrl: Kenginer ,
         projectLink: "https://mercycermy.github.io/kENGINEERING/",
         codeLink: "https://github.com/Mercycermy/kENGINEERING",
@@ -107,7 +107,7 @@ const Work = () => {
       {
         title: "Family Pet Shop",
         description: "A pet shop offering premium pet food, training, and adoption services.",
-        tags: ["ReactJs", "Web Development"],
+        tags: ["ReactJS", "Web Development"],
         imgUrl: Petshop,
         projectLink: "https://mercycermy.github.io/family-pet/",
         codeLink: "https://github.com/Mercycermy/family-pet",
@@ -115,7 +115,7 @@ const Work = () => {
       {
         title: "Filmmaker Portfolio",
         description: "A portfolio showcasing filmmaking projects and collaborations.",
-        tags: ["Figma", "ReactJs", "Web Development"],
+        tags: ["Figma", "ReactJS", "Web Development"],
         imgUrl: Akilas,
         projectLink: "https://mercycermy.github.io/filmakerweb/",
         codeLink: "https://github.com/Mercycermy/filmakerweb",
